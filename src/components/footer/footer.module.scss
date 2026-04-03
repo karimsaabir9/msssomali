@@ -1,7 +1,8 @@
+@use "sass:color";
 @use '../../variables.scss' as mixin;
 
 .footer {
-    background-color: transparentize(mixin.$primaryColor, 0.4);
+    background-color: color.adjust(mixin.$primaryColor, $alpha: -0.4);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     color: mixin.$primaryTextColor;
     padding: 4rem 1rem 1rem;
@@ -17,7 +18,16 @@
             color: mixin.$secondaryColor;
             margin-bottom: 1rem;
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            text-shadow: mixin.$logoGlow;
+            transition: transform 0.3s ease, text-shadow 0.3s ease;
+            cursor: default;
+
+            &:hover {
+                transform: scale(1.05);
+                text-shadow: 0 0 15px rgba(38, 211, 182, 0.6);
+            }
         }
         
         h3 {
@@ -77,5 +87,25 @@
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         color: mixin.$secondaryTextColor;
         font-size: 0.85rem;
+    }
+
+    /* Moblie */
+    @media(max-width:640px) {
+        padding: 3rem 1rem 1rem;
+        
+        .container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 2.5rem;
+
+            .brand p {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .social .icons {
+                justify-content: center;
+            }
+        }
     }
 }

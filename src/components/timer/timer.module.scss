@@ -17,6 +17,8 @@
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		gap: 2rem;
+		flex-wrap: wrap;
 	}
 
 	.digit_text {
@@ -34,4 +36,25 @@
 		text-transform: uppercase;
 	}
 
+	/* Dektop and laptops */
+	@media(min-width:1025px) and (max-width:1280px){
+		.digit { font-size: 7rem; }
+		.text { font-size: 1.5rem; }
+	}
+
+	/* tablets */
+	@media (min-width:641px) and (max-width:1024px) {
+		h1 { font-size: 32px; }
+		.digit { font-size: 5rem; }
+		.text { font-size: 1.2rem; }
+		.time { gap: 1.5rem; }
+	}
+
+	/* Moblie */
+	@media(max-width:640px) {
+		h1 { font-size: 24px; margin-bottom: 0.5rem; }
+		.digit { font-size: 3.2rem; }
+		.text { font-size: 0.8rem; }
+		.time { gap: 0.4rem; margin-top: 0.5rem; }
+	}
 }

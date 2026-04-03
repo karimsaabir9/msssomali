@@ -11,7 +11,10 @@
 		span {
 			font-size: mixin.$headingFontSize;
 			line-height: 56px;
-			font-weight: 700;
+			font-weight: 800;
+			color: mixin.$secondaryColor;
+			text-shadow: mixin.$logoGlow;
+			letter-spacing: -1px;
 		}
 
 		p {
@@ -30,5 +33,27 @@
 		align-items: center;
 		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 		margin: mixin.$spaceY;
+        gap: 1.5rem;
+	}
+
+	/* Dektop and laptops */
+	@media(min-width:1025px) and (max-width:1280px){
+		.competitors_header p { width: 80%; }
+	}
+
+	/* tablets */
+	@media (min-width:641px) and (max-width:1024px) {
+		.competitors_header { padding: 0 1.5rem; }
+		.competitors_header span { font-size: 32px; }
+		.competitors_header p { width: 85%; font-size: 15px; }
+		.competitors { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); padding: 0 1rem; }
+	}
+
+	/* Moblie */
+	@media(max-width:640px) {
+		.competitors_header { margin-top: 2rem; padding: 0 1rem; }
+		.competitors_header span { font-size: 26px; line-height: 1.2; }
+		.competitors_header p { width: 100%; font-size: 14px; line-height: 1.5; margin: 0.5rem 0; }
+		.competitors { grid-template-columns: 1fr; margin-top: 1.5rem; gap: 1rem; padding: 0; }
 	}
 }

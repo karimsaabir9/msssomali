@@ -1,9 +1,10 @@
 $primaryColor: #18181b;
-$secondaryColor: #2dc5b2;
+$secondaryColor: #26d3b6; // More vibrant teal/cyan
 $primaryTextColor: #f4f4f5;
 $secondaryTextColor: #8d8d96;
+$logoGlow: 0 0 10px rgba(38, 211, 182, 0.4); // Neon glow
 $mobileBreakpoints: 489px;
 $tabletBreakpoints: 720px;
 $desktopBreakpoints: 1312px;
 $headingFontSize: 48px;
-$spaceY: 4rem 2rem 0 0;
+$spaceY: 4rem 0 0 0;
